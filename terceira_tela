@@ -1,0 +1,35 @@
+package com.example.avaliao;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+public class terceiratela extends AppCompatActivity {
+
+    //private chamando a ListView que é responsável pela lista na terceira tela
+
+    private ListView listNomes;
+
+    //Criação da String que irá declarar os itens que estarão presentes na lista
+    private String[] itens = {
+
+            "Agachamento", "Abdominal simples", "Polichinelo", "Skipping"
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_terceiratela);
+
+        //Criação do layout que será utilizado pela lista chamando um método já existente na
+        listNomes = findViewById(R.id.listNomes);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+                android.R.layout.simple_list_item_1,
+                android.R.id.text1, itens);
+
+        listNomes.setAdapter(adapter);
+    }
+}
